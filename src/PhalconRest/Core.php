@@ -8,7 +8,9 @@ class Core
     {
 
         $return = array();
-
+        if(!is_array($array)){
+            $array = [$array];
+        }
         foreach ($array as $key => $value) {
             if (is_array($value)) {
                 $return = array_merge($return, self::array_flatten($value));

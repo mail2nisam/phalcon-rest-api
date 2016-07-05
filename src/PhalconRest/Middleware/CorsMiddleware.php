@@ -10,8 +10,9 @@ use PhalconRest\Mvc\Plugin;
 
 class CorsMiddleware extends Plugin implements MiddlewareInterface
 {
-    const ALL_ORIGINS = ['*'];
-    const DEFAULT_HEADERS = ['Content-Type', 'X-Requested-With', 'Authorization'];
+
+//    private $ALL_ORIGINS = ['*'];
+//    private $DEFAULT_HEADERS = ['Content-Type', 'X-Requested-With', 'Authorization'];
 
     /**
      * @var array Allowed origins
@@ -36,9 +37,16 @@ class CorsMiddleware extends Plugin implements MiddlewareInterface
      * @param array|null $allowedHeaders Allowed headers
      */
     public function __construct(
-        array $allowedOrigins = self::ALL_ORIGINS,
-        array $allowedMethods = HttpMethods::ALL_METHODS,
-        array $allowedHeaders = self::DEFAULT_HEADERS
+        array $allowedOrigins = ['*'],
+        array $allowedMethods = [
+            HttpMethods::GET,
+            HttpMethods::POST,
+            HttpMethods::PUT,
+            HttpMethods::DELETE,
+            HttpMethods::HEAD,
+            HttpMethods::OPTIONS,
+            HttpMethods::PATCH],
+        array $allowedHeaders = ['Content-Type', 'X-Requested-With', 'Authorization']
     ) {
         $this->setAllowedOrigins($allowedOrigins);
         $this->setAllowedMethods($allowedMethods);
