@@ -1,7 +1,9 @@
 # Phalcon REST
 
- ### This is a PHP 5.5 compatible phalcon-rest forked from https://github.com/redound/phalcon-rest
- ### use your own risk
+### This is a PHP 5.5 compatible phalcon-rest forked from https://github.com/redound/phalcon-rest
+ 
+### Use your own risk
+ 
 ````
 
 ## Boilerplate
@@ -18,4 +20,3 @@ Please file issues under GitHub, or submit a pull request if you'd like to direc
 
 ## License
 Not set
-```
